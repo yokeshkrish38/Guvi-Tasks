@@ -1,0 +1,251 @@
+root@IN-GTC-3414:/mnt/c/Users/yh1/Downloads/linux# ssh -i testlinux.pem ec2-user@65.1.92.151
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Sun Jun 22 08:20:36 2025 from 152.58.211.191
+[ec2-user@ip-172-31-5-187 ~]$ ls
+[ec2-user@ip-172-31-5-187 ~]$ ls dir
+ls: cannot access 'dir': No such file or directory
+[ec2-user@ip-172-31-5-187 ~]$ ls -lthr
+total 0
+[ec2-user@ip-172-31-5-187 ~]$ mkdir yokesh
+[ec2-user@ip-172-31-5-187 ~]$ cd yokesh
+[ec2-user@ip-172-31-5-187 yokesh]$ ls
+[ec2-user@ip-172-31-5-187 yokesh]$ cd ..
+[ec2-user@ip-172-31-5-187 ~]$ ls
+yokesh
+[ec2-user@ip-172-31-5-187 ~]$
+Broadcast message from root@ip-172-31-5-187.ap-south-1.compute.internal (Sun 2025-06-22 08:42:20 UTC):
+
+The system will power off now!
+
+Connection to 65.1.92.151 closed by remote host.
+Connection to 65.1.92.151 closed.
+root@IN-GTC-3414:/mnt/c/Users/yh1/Downloads/linux# exit
+exit
+yh1@IN-GTC-3414:/mnt/c/Users/yh1$ cd/c/Users/yh1/Downloads/linux/
+-bash: cd/c/Users/yh1/Downloads/linux/: No such file or directory
+yh1@IN-GTC-3414:/mnt/c/Users/yh1$ cd/mnt/c/Users/yh1/Downloads/linux/
+-bash: cd/mnt/c/Users/yh1/Downloads/linux/: No such file or directory
+yh1@IN-GTC-3414:/mnt/c/Users/yh1$ cd/mnt/c/Users/yh1/Downloads/
+-bash: cd/mnt/c/Users/yh1/Downloads/: No such file or directory
+yh1@IN-GTC-3414:/mnt/c/Users/yh1$ cd/c/Users/yh1/Downloads/
+-bash: cd/c/Users/yh1/Downloads/: No such file or directory
+yh1@IN-GTC-3414:/mnt/c/Users/yh1$ cd /D
+-bash: cd: /D: No such file or directory
+yh1@IN-GTC-3414:/mnt/c/Users/yh1$ sudo su
+[sudo] password for yh1:
+root@IN-GTC-3414:/mnt/c/Users/yh1# ssh -i testlinux.pem ec2-user@65.1.92.151
+Warning: Identity file testlinux.pem not accessible: No such file or directory.
+exir
+exit
+
+^C
+root@IN-GTC-3414:/mnt/c/Users/yh1# cd/c/Users/yh1/D
+cd
+root@IN-GTC-3414:/mnt/c/Users/yh1# cd/c/Users/yh1/D
+cd
+root@IN-GTC-3414:/mnt/c/Users/yh1# cd/c/Users/yh1/
+bash: cd/c/Users/yh1/: No such file or directory
+root@IN-GTC-3414:/mnt/c/Users/yh1# cd/c/Users/yh1/Downloads/
+bash: cd/c/Users/yh1/Downloads/: No such file or directory
+root@IN-GTC-3414:/mnt/c/Users/yh1# ls
+ AppData                                                                                        OneDriveCloudTemp
+'Application Data'                                                                              PrintHood
+ Contacts                                                                                       Recent
+ Cookies                                                                                       'Saved Games'
+ Documents                                                                                      Searches
+ Downloads                                                                                      SendTo
+ Favorites                                                                                     'Start Menu'
+ Links                                                                                          Templates
+'Local Settings'                                                                                Videos
+ Music                                                                                          advanced_ip_scanner_Aliases.bin
+'My Documents'                                                                                  advanced_ip_scanner_Comments.bin
+ NTUSER.DAT                                                                                     advanced_ip_scanner_MAC.bin
+ NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TM.blf                                        desktop.ini
+ NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TMContainer00000000000000000001.regtrans-ms   krish.txt
+ NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TMContainer00000000000000000002.regtrans-ms   ntuser.dat.LOG1
+ NetHood                                                                                        ntuser.dat.LOG2
+ OneDrive                                                                                       ntuser.ini
+'OneDrive - rgbsi.co.in'                                                                        rgbsi.co.in
+root@IN-GTC-3414:/mnt/c/Users/yh1# ls -lthr
+total 39M
+drwxrwxrwx 1 yh1 yh1  512 Nov  2  2023  OneDrive
+drwxrwxrwx 1 yh1 yh1  512 Nov  2  2023  Documents
+lrwxrwxrwx 1 yh1 yh1   26 May 27  2024 'My Documents' -> /mnt/c/Users/yh1/Documents
+lrwxrwxrwx 1 yh1 yh1   68 May 27  2024  NetHood -> '/mnt/c/Users/yh1/AppData/Roaming/Microsoft/Windows/Network Shortcuts'
+lrwxrwxrwx 1 yh1 yh1   32 May 27  2024 'Application Data' -> /mnt/c/Users/yh1/AppData/Roaming
+lrwxrwxrwx 1 yh1 yh1   60 May 27  2024  Templates -> /mnt/c/Users/yh1/AppData/Roaming/Microsoft/Windows/Templates
+lrwxrwxrwx 1 yh1 yh1   61 May 27  2024 'Start Menu' -> '/mnt/c/Users/yh1/AppData/Roaming/Microsoft/Windows/Start Menu'
+lrwxrwxrwx 1 yh1 yh1   57 May 27  2024  SendTo -> /mnt/c/Users/yh1/AppData/Roaming/Microsoft/Windows/SendTo
+lrwxrwxrwx 1 yh1 yh1   57 May 27  2024  Recent -> /mnt/c/Users/yh1/AppData/Roaming/Microsoft/Windows/Recent
+lrwxrwxrwx 1 yh1 yh1   68 May 27  2024  PrintHood -> '/mnt/c/Users/yh1/AppData/Roaming/Microsoft/Windows/Printer Shortcuts'
+lrwxrwxrwx 1 yh1 yh1   30 May 27  2024 'Local Settings' -> /mnt/c/Users/yh1/AppData/Local
+lrwxrwxrwx 1 yh1 yh1   60 May 27  2024  Cookies -> /mnt/c/Users/yh1/AppData/Local/Microsoft/Windows/INetCookies
+-rwxrwxrwx 1 yh1 yh1 6.3M May 27  2024  ntuser.dat.LOG2
+-rwxrwxrwx 1 yh1 yh1 6.2M May 27  2024  ntuser.dat.LOG1
+-rwxrwxrwx 1 yh1 yh1 512K May 27  2024  NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TMContainer00000000000000000002.regtrans-ms
+-rwxrwxrwx 1 yh1 yh1 512K May 27  2024  NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TMContainer00000000000000000001.regtrans-ms
+-rwxrwxrwx 1 yh1 yh1  64K May 27  2024  NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TM.blf
+-rwxrwxrwx 1 yh1 yh1   20 May 28  2024  ntuser.ini
+drwxrwxrwx 1 yh1 yh1  512 May 28  2024  Contacts
+drwxrwxrwx 1 yh1 yh1  512 May 28  2024  Favorites
+drwxrwxrwx 1 yh1 yh1  512 May 28  2024  Music
+drwxrwxrwx 1 yh1 yh1  512 May 28  2024 'Saved Games'
+drwxrwxrwx 1 yh1 yh1  512 May 28  2024  Links
+drwxrwxrwx 1 yh1 yh1  512 May 28  2024  AppData
+drwxrwxrwx 1 yh1 yh1  512 Mar 23 14:48  Videos
+drwxrwxrwx 1 yh1 yh1  512 Mar 26 03:52  Searches
+-rwxrwxrwx 1 yh1 yh1   15 Apr  1 11:13  advanced_ip_scanner_Comments.bin
+-rwxrwxrwx 1 yh1 yh1   15 Apr  1 11:13  advanced_ip_scanner_Aliases.bin
+-rwxrwxrwx 1 yh1 yh1  12K Apr  1 11:13  advanced_ip_scanner_MAC.bin
+-rwxrwxrwx 1 yh1 yh1   84 Apr 22 03:46  desktop.ini
+-rwxrwxrwx 1 yh1 yh1    0 Jun 21 07:16  krish.txt
+-rwxrwxrwx 1 yh1 yh1  25M Jun 21 21:15  NTUSER.DAT
+drwxrwxrwx 1 yh1 yh1  512 Jun 22 03:47 'OneDrive - rgbsi.co.in'
+drwxrwxrwx 1 yh1 yh1  512 Jun 22 03:47  rgbsi.co.in
+drwxrwxrwx 1 yh1 yh1  512 Jun 22 03:47  OneDriveCloudTemp
+drwxrwxrwx 1 yh1 yh1  512 Jun 22 08:33  Downloads
+root@IN-GTC-3414:/mnt/c/Users/yh1# cd Do
+Documents/ Downloads/
+root@IN-GTC-3414:/mnt/c/Users/yh1# cd Downloads
+root@IN-GTC-3414:/mnt/c/Users/yh1/Downloads# ssh -i testlinux.pem ec2-user@43.204.230.12
+Warning: Identity file testlinux.pem not accessible: No such file or directory.
+The authenticity of host '43.204.230.12 (43.204.230.12)' can't be established.
+ED25519 key fingerprint is SHA256:1g5ajcGozcCH2QsWrhKR4gTutD9ahqUrL7gl51wkD+c.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:1: [hashed name]
+    ~/.ssh/known_hosts:2: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '43.204.230.12' (ED25519) to the list of known hosts.
+ec2-user@43.204.230.12: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+root@IN-GTC-3414:/mnt/c/Users/yh1/Downloads# cd linux
+root@IN-GTC-3414:/mnt/c/Users/yh1/Downloads/linux# ssh -i testlinux.pem ec2-user@43.204.230.12
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Sun Jun 22 08:36:44 2025 from 152.58.211.191
+[ec2-user@ip-172-31-5-187 ~]$ ls
+mytestfolder
+[ec2-user@ip-172-31-5-187 ~]$ cd mytestfolder
+[ec2-user@ip-172-31-5-187 mytestfolder]$ touch mylinuxfile.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ vim mylinuxfile.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ cat mylinuxfile.txt
+This is my Linux learing week 1 task
+I am excited for the upcoming classes
+[ec2-user@ip-172-31-5-187 mytestfolder]$ ls
+mylinuxfile.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ touch anotherlinuxfile.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ vim anotherlinuxfile.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ cat anotherlinuxfile.txt
+This is the another file created for the linux task named anotherlinuxfile.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ client_loop: send disconnect: Broken pipe
+root@IN-GTC-3414:/mnt/c/Users/yh1/Downloads/linux# cat anotherlinuxfile.txt >> mylinuxfile.txt
+cat: anotherlinuxfile.txt: No such file or directory
+root@IN-GTC-3414:/mnt/c/Users/yh1/Downloads/linux# ls
+mylinuxfile.txt  testlinux.pem
+root@IN-GTC-3414:/mnt/c/Users/yh1/Downloads/linux# cat anotherlinuxfile.txt
+cat: anotherlinuxfile.txt: No such file or directory
+root@IN-GTC-3414:/mnt/c/Users/yh1/Downloads/linux# cat myinuxfile.txt
+cat: myinuxfile.txt: No such file or directory
+root@IN-GTC-3414:/mnt/c/Users/yh1/Downloads/linux# cat mylinuxfile.txt
+root@IN-GTC-3414:/mnt/c/Users/yh1/Downloads/linux# cat mylinuxfile.txt
+root@IN-GTC-3414:/mnt/c/Users/yh1/Downloads/linux# ssh -i testlinux.pem ec2-user@43.204.230.12
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Sun Jun 22 13:10:53 2025 from 157.50.185.55
+[ec2-user@ip-172-31-5-187 ~]$ ls
+mytestfolder
+[ec2-user@ip-172-31-5-187 ~]$ cd testfolder
+-bash: cd: testfolder: No such file or directory
+[ec2-user@ip-172-31-5-187 ~]$ cd mytestfolder
+[ec2-user@ip-172-31-5-187 mytestfolder]$ ls
+anotherlinuxfile.txt  mylinuxfile.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ cat mylinuxfile.txt
+This is my Linux learing week 1 task
+I am excited for the upcoming classes
+[ec2-user@ip-172-31-5-187 mytestfolder]$ cat anotherlinuxfile.txt
+This is the another file created for the linux task named anotherlinuxfile.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ cat anotherlinuxfile.txt >> mylinuxfile.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ ls
+anotherlinuxfile.txt  mylinuxfile.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ cat mylinuxfile.txt
+This is my Linux learing week 1 task
+I am excited for the upcoming classes
+This is the another file created for the linux task named anotherlinuxfile.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ ls
+anotherlinuxfile.txt  mylinuxfile.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ cd ..
+[ec2-user@ip-172-31-5-187 ~]$ ls
+mytestfolder
+[ec2-user@ip-172-31-5-187 ~]$ ls -l
+total 0
+drwxr-xr-x. 2 ec2-user ec2-user 57 Jun 22 13:21 mytestfolder
+[ec2-user@ip-172-31-5-187 ~]$ cd mytestfolder
+[ec2-user@ip-172-31-5-187 mytestfolder]$ ls -l
+total 8
+-rw-r--r--. 1 ec2-user ec2-user  79 Jun 22 13:21 anotherlinuxfile.txt
+-rw-r--r--. 1 ec2-user ec2-user 154 Jun 22 13:42 mylinuxfile.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ for i in{1..20}; do
+-bash: syntax error near unexpected token `in{1..20}'
+[ec2-user@ip-172-31-5-187 mytestfolder]$ for i in{1..20}; do touch "mylinuxfile_si.txt"
+-bash: syntax error near unexpected token `in{1..20}'
+[ec2-user@ip-172-31-5-187 mytestfolder]$ touch mylinuxfile{1..20}.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ ls
+anotherlinuxfile.txt  mylinuxfile11.txt  mylinuxfile15.txt  mylinuxfile19.txt  mylinuxfile4.txt  mylinuxfile8.txt
+mylinuxfile.txt       mylinuxfile12.txt  mylinuxfile16.txt  mylinuxfile2.txt   mylinuxfile5.txt  mylinuxfile9.txt
+mylinuxfile1.txt      mylinuxfile13.txt  mylinuxfile17.txt  mylinuxfile20.txt  mylinuxfile6.txt
+mylinuxfile10.txt     mylinuxfile14.txt  mylinuxfile18.txt  mylinuxfile3.txt   mylinuxfile7.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ mv mylinuxfile{1..5}.txt yokeshfile{1..5}.txt
+mv: target 'yokeshfile5.txt' is not a directory
+[ec2-user@ip-172-31-5-187 mytestfolder]$ ^C
+[ec2-user@ip-172-31-5-187 mytestfolder]$ ls
+anotherlinuxfile.txt  mylinuxfile11.txt  mylinuxfile15.txt  mylinuxfile19.txt  mylinuxfile4.txt  mylinuxfile8.txt
+mylinuxfile.txt       mylinuxfile12.txt  mylinuxfile16.txt  mylinuxfile2.txt   mylinuxfile5.txt  mylinuxfile9.txt
+mylinuxfile1.txt      mylinuxfile13.txt  mylinuxfile17.txt  mylinuxfile20.txt  mylinuxfile6.txt
+mylinuxfile10.txt     mylinuxfile14.txt  mylinuxfile18.txt  mylinuxfile3.txt   mylinuxfile7.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ mv mylinuxfile1.txt yokeshfile1.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ mv mylinuxfile2.txt yokeshfile2.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ mv mylinuxfile3.txt yokeshfile3.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ mv mylinuxfile4.txt yokeshfile4.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ mv mylinuxfile5.txt yokeshfile5.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ ls
+anotherlinuxfile.txt  mylinuxfile12.txt  mylinuxfile16.txt  mylinuxfile20.txt  mylinuxfile9.txt  yokeshfile4.txt
+mylinuxfile.txt       mylinuxfile13.txt  mylinuxfile17.txt  mylinuxfile6.txt   yokeshfile1.txt   yokeshfile5.txt
+mylinuxfile10.txt     mylinuxfile14.txt  mylinuxfile18.txt  mylinuxfile7.txt   yokeshfile2.txt
+mylinuxfile11.txt     mylinuxfile15.txt  mylinuxfile19.txt  mylinuxfile8.txt   yokeshfile3.txt
+[ec2-user@ip-172-31-5-187 mytestfolder]$ mv yokeshfile.txt yokeshfile1.yml
+mv: cannot stat 'yokeshfile.txt': No such file or directory
+[ec2-user@ip-172-31-5-187 mytestfolder]$ mv yokeshfile1.txt yokeshfile1.yml
+[ec2-user@ip-172-31-5-187 mytestfolder]$ mv yokeshfile2.txt yokeshfile2.yml
+[ec2-user@ip-172-31-5-187 mytestfolder]$ mv yokeshfile3.txt yokeshfile3.yml
+[ec2-user@ip-172-31-5-187 mytestfolder]$ mv yokeshfile4.txt yokeshfile4.yml
+[ec2-user@ip-172-31-5-187 mytestfolder]$ mv yokeshfile5.txt yokeshfile5.yml
+[ec2-user@ip-172-31-5-187 mytestfolder]$ ls
+anotherlinuxfile.txt  mylinuxfile12.txt  mylinuxfile16.txt  mylinuxfile20.txt  mylinuxfile9.txt  yokeshfile4.yml
+mylinuxfile.txt       mylinuxfile13.txt  mylinuxfile17.txt  mylinuxfile6.txt   yokeshfile1.yml   yokeshfile5.yml
+mylinuxfile10.txt     mylinuxfile14.txt  mylinuxfile18.txt  mylinuxfile7.txt   yokeshfile2.yml
+mylinuxfile11.txt     mylinuxfile15.txt  mylinuxfile19.txt  mylinuxfile8.txt   yokeshfile3.yml
+[ec2-user@ip-172-31-5-187 mytestfolder]$
