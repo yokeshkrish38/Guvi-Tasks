@@ -1,0 +1,21 @@
+[ec2-user@ip-172-31-5-187 ~]$ sudo -i
+[root@ip-172-31-5-187 ~]# ls
+test
+[root@ip-172-31-5-187 ~]# pwd
+/root
+[root@ip-172-31-5-187 ~]# cd /home
+[root@ip-172-31-5-187 home]# ls
+ec2-user  yokesh
+[root@ip-172-31-5-187 home]# touch demo.txt
+[root@ip-172-31-5-187 home]# chmod 764 demo.txt
+[root@ip-172-31-5-187 home]# ls -l
+total 0
+-rwxrw-r--. 1 root     root       0 Jun 29 07:36 demo.txt
+drwx------. 5 ec2-user ec2-user 150 Jun 28 05:10 ec2-user
+drwx------. 2 yokesh   yokesh    62 Jun 29 04:18 yokesh
+[root@ip-172-31-5-187 home]# cd ..
+[root@ip-172-31-5-187 /]# cd
+[root@ip-172-31-5-187 ~]# ls -l /home/demo.txt
+-rwxrw-r--. 1 root root 0 Jun 29 07:36 /home/demo.txt
+[root@ip-172-31-5-187 ~]#
+
