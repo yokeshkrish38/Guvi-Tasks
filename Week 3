@@ -1,0 +1,130 @@
+[ec2-user@ip-172-31-5-187 ~]$ nslookup guvi.in
+Server:         172.31.0.2
+Address:        172.31.0.2#53
+
+Non-authoritative answer:
+Name:   guvi.in
+Address: 172.67.70.207
+Name:   guvi.in
+Address: 104.26.4.88
+Name:   guvi.in
+Address: 104.26.5.88
+Name:   guvi.in
+Address: 2606:4700:20::681a:458
+Name:   guvi.in
+Address: 2606:4700:20::ac43:46cf
+Name:   guvi.in
+Address: 2606:4700:20::681a:558
+
+
+
+
+[ec2-user@ip-172-31-5-187 ~]$ dig guvi.in +short
+104.26.5.88
+104.26.4.88
+172.67.70.207
+
+
+top - 04:20:40 up 4 min,  1 user,  load average: 0.00, 0.00, 0.00
+Tasks: 101 total,   1 running, 100 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.3 us,  0.0 sy,  0.0 ni, 97.1 id,  0.0 wa,  0.0 hi,  0.0 si,  2.6 st
+MiB Mem :    949.4 total,    589.1 free,    124.8 used,    235.4 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.    687.3 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  106652  16988  10604 S   0.0   1.7   0:00.67 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par_gp
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 slub_flushwq
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 netns
+      7 root      20   0       0      0      0 I   0.0   0.0   0:00.01 kworker/0:0-events
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-events_highpri
+      9 root      20   0       0      0      0 I   0.0   0.0   0:00.02 kworker/u30:0-events_unbound
+     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mm_percpu_wq
+     11 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_kthread
+     12 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_rude_kthread
+     13 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_trace_kthread
+     14 root      20   0       0      0      0 S   0.0   0.0   0:00.03 ksoftirqd/0
+     15 root      20   0       0      0      0 I   0.0   0.0   0:00.02 rcu_preempt
+     16 root      rt   0       0      0      0 S   0.0   0.0   0:00.00 migration/0
+     17 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/0:1-cgroup_destroy
+     18 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0
+     20 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kdevtmpfs
+     21 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 inet_frag_wq
+     22 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kauditd
+     23 root      20   0       0      0      0 S   0.0   0.0   0:00.00 khungtaskd
+     24 root      20   0       0      0      0 S   0.0   0.0   0:00.00 oom_reaper
+     25 root      20   0       0      0      0 I   0.0   0.0   0:00.09 kworker/u30:1-writeback
+     26 root      20   0       0      0      0 I   0.0   0.0   0:00.01 kworker/u30:2-events_unbound
+     27 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 writeback
+     28 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kcompactd0
+     29 root      39  19       0      0      0 S   0.0   0.0   0:00.00 khugepaged
+     30 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 cryptd
+     31 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kintegrityd
+     32 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kblockd
+     33 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 blkcg_punt_bio
+     34 root      20   0       0      0      0 S   0.0   0.0   0:00.00 xen-balloon
+     35 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 tpm_dev_wq
+     36 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 md
+     37 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 edac-poller          
+
+
+
+[root@ip-172-31-5-187 ~]# ping 172.31.10.10
+PING 172.31.10.10 (172.31.10.10) 56(84) bytes of data.
+64 bytes from 172.31.10.10: icmp_seq=60 ttl=127 time=0.942 ms
+64 bytes from 172.31.10.10: icmp_seq=61 ttl=127 time=0.668 ms
+64 bytes from 172.31.10.10: icmp_seq=62 ttl=127 time=0.899 ms
+64 bytes from 172.31.10.10: icmp_seq=63 ttl=127 time=1.22 ms
+64 bytes from 172.31.10.10: icmp_seq=64 ttl=127 time=0.782 ms
+64 bytes from 172.31.10.10: icmp_seq=65 ttl=127 time=1.02 ms
+64 bytes from 172.31.10.10: icmp_seq=66 ttl=127 time=0.775 ms
+64 bytes from 172.31.10.10: icmp_seq=67 ttl=127 time=0.880 ms
+64 bytes from 172.31.10.10: icmp_seq=68 ttl=127 time=0.691 ms
+64 bytes from 172.31.10.10: icmp_seq=69 ttl=127 time=0.741 ms
+64 bytes from 172.31.10.10: icmp_seq=70 ttl=127 time=0.563 ms
+64 bytes from 172.31.10.10: icmp_seq=71 ttl=127 time=0.505 ms
+64 bytes from 172.31.10.10: icmp_seq=72 ttl=127 time=1.63 ms
+64 bytes from 172.31.10.10: icmp_seq=73 ttl=127 time=1.40 ms
+64 bytes from 172.31.10.10: icmp_seq=74 ttl=127 time=0.508 ms
+64 bytes from 172.31.10.10: icmp_seq=75 ttl=127 time=0.508 ms
+64 bytes from 172.31.10.10: icmp_seq=76 ttl=127 time=0.389 ms
+64 bytes from 172.31.10.10: icmp_seq=77 ttl=127 time=1.02 ms
+64 bytes from 172.31.10.10: icmp_seq=78 ttl=127 time=0.880 ms
+64 bytes from 172.31.10.10: icmp_seq=79 ttl=127 time=1.02 ms
+64 bytes from 172.31.10.10: icmp_seq=80 ttl=127 time=0.809 ms
+64 bytes from 172.31.10.10: icmp_seq=81 ttl=127 time=1.12 ms
+64 bytes from 172.31.10.10: icmp_seq=82 ttl=127 time=0.876 ms
+64 bytes from 172.31.10.10: icmp_seq=83 ttl=127 time=1.01 ms
+64 bytes from 172.31.10.10: icmp_seq=84 ttl=127 time=0.676 ms
+64 bytes from 172.31.10.10: icmp_seq=85 ttl=127 time=0.725 ms
+64 bytes from 172.31.10.10: icmp_seq=86 ttl=127 time=0.620 ms
+^C
+--- 172.31.10.10 ping statistics ---
+86 packets transmitted, 27 received, 68.6047% packet loss, time 88177ms
+rtt min/avg/max/mdev = 0.389/0.847/1.630/0.277 ms
+[root@ip-172-31-5-187 ~]# telnet 172.31.10.10
+Trying 172.31.10.10...
+telnet: connect to address 172.31.10.10: Connection refused
+[root@ip-172-31-5-187 ~]# telnet 172.31.10.10 22
+Trying 172.31.10.10...
+Connected to 172.31.10.10.
+Escape character is '^]'.
+SSH-2.0-OpenSSH_8.7
+
+
+[root@ip-172-31-5-187 ~]# netstat -tulp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:ssh             0.0.0.0:*               LISTEN      2136/sshd: /usr/sbi
+tcp6       0      0 [::]:ssh                [::]:*                  LISTEN      2136/sshd: /usr/sbi
+udp        0      0 localhost:323           0.0.0.0:*                           2165/chronyd
+udp        0      0 ip-172-31-5-187.:bootpc 0.0.0.0:*                           1966/systemd-networ
+udp6       0      0 localhost6:323          [::]:*                              2165/chronyd
+udp6       0      0 ip-172-31:dhcpv6-client [::]:*                              1966/systemd-networ
+
+
+        
+
+
