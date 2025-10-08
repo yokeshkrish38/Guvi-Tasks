@@ -1,0 +1,360 @@
+root@IN-GTC-3414:/mnt/c/linux# ssh -i mylinux.pem ec2-user@52.66.30.190
+The authenticity of host '52.66.30.190 (52.66.30.190)' can't be established.
+ED25519 key fingerprint is SHA256:cg4d9UwFWVyVsqhAvCRaQ9PRika+3u7arkr9DSxaV7Y.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:7: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '52.66.30.190' (ED25519) to the list of known hosts.
+
+A newer release of "Amazon Linux" is available.
+  Version 2023.9.20250929:
+Run "/usr/bin/dnf check-release-update" for full release and version update info
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Wed Oct  1 14:36:47 2025 from 49.206.242.38
+[ec2-user@ip-172-31-44-195 ~]$ ^C
+[ec2-user@ip-172-31-44-195 ~]$ ^C
+[ec2-user@ip-172-31-44-195 ~]$
+[ec2-user@ip-172-31-44-195 ~]$ sudo -i
+[root@ip-172-31-44-195 ~]# cat /etc/os-release
+NAME="Amazon Linux"
+VERSION="2023"
+ID="amzn"
+ID_LIKE="fedora"
+VERSION_ID="2023"
+PLATFORM_ID="platform:al2023"
+PRETTY_NAME="Amazon Linux 2023.8.20250915"
+ANSI_COLOR="0;33"
+CPE_NAME="cpe:2.3:o:amazon:amazon_linux:2023"
+HOME_URL="https://aws.amazon.com/linux/amazon-linux-2023/"
+DOCUMENTATION_URL="https://docs.aws.amazon.com/linux/"
+SUPPORT_URL="https://aws.amazon.com/premiumsupport/"
+BUG_REPORT_URL="https://github.com/amazonlinux/amazon-linux-2023"
+VENDOR_NAME="AWS"
+VENDOR_URL="https://aws.amazon.com/"
+SUPPORT_END="2029-06-30"
+[root@ip-172-31-44-195 ~]#
+[root@ip-172-31-44-195 ~]# sudo yum update -y
+Last metadata expiration check: 0:13:30 ago on Wed Oct  8 07:04:12 2025.
+=====================================================================================================================================
+WARNING:
+  A newer release of "Amazon Linux" is available.
+
+  Available Versions:
+
+  Version 2023.9.20250929:
+    Run the following command to upgrade to 2023.9.20250929:
+
+      dnf upgrade --releasever=2023.9.20250929
+
+    Release notes:
+     https://docs.aws.amazon.com/linux/al2023/release-notes/relnotes-2023.9.20250929.html
+
+=====================================================================================================================================
+Dependencies resolved.
+Nothing to do.
+Complete!
+[root@ip-172-31-44-195 ~]# sudo amazon-linux-extras install docker -y
+sudo: amazon-linux-extras: command not found
+[root@ip-172-31-44-195 ~]# docker --version
+Docker version 25.0.8, build 0bab007
+[root@ip-172-31-44-195 ~]# docker compose version
+docker: 'compose' is not a docker command.
+See 'docker --help'
+[root@ip-172-31-44-195 ~]# sudo yum update -y
+sudo amazon-linux-extras install docker -y
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+Last metadata expiration check: 0:16:47 ago on Wed Oct  8 07:04:12 2025.
+=====================================================================================================================================
+WARNING:
+  A newer release of "Amazon Linux" is available.
+
+  Available Versions:
+
+  Version 2023.9.20250929:
+    Run the following command to upgrade to 2023.9.20250929:
+
+      dnf upgrade --releasever=2023.9.20250929
+
+    Release notes:
+     https://docs.aws.amazon.com/linux/al2023/release-notes/relnotes-2023.9.20250929.html
+
+=====================================================================================================================================
+Dependencies resolved.
+Nothing to do.
+Complete!
+sudo: amazon-linux-extras: command not found
+[root@ip-172-31-44-195 ~]# yum amazon-linux-extras install docker -y
+No such command: amazon-linux-extras. Please use /usr/bin/yum --help
+It could be a YUM plugin command, try: "yum install 'dnf-command(amazon-linux-extras)'"
+[root@ip-172-31-44-195 ~]# amazon-linux-extras install docker -y
+-bash: amazon-linux-extras: command not found
+[root@ip-172-31-44-195 ~]# sudo dnf update -y
+sudo dnf install docker -y
+Last metadata expiration check: 0:17:54 ago on Wed Oct  8 07:04:12 2025.
+=====================================================================================================================================
+WARNING:
+  A newer release of "Amazon Linux" is available.
+
+  Available Versions:
+
+  Version 2023.9.20250929:
+    Run the following command to upgrade to 2023.9.20250929:
+
+      dnf upgrade --releasever=2023.9.20250929
+
+    Release notes:
+     https://docs.aws.amazon.com/linux/al2023/release-notes/relnotes-2023.9.20250929.html
+
+=====================================================================================================================================
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:17:55 ago on Wed Oct  8 07:04:12 2025.
+Package docker-25.0.8-1.amzn2023.0.6.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[root@ip-172-31-44-195 ~]#
+[root@ip-172-31-44-195 ~]# sudo systemctl enable --now docker
+sudo usermod -aG docker $USER
+newgrp docker
+[root@ip-172-31-44-195 ~]# sudo dnf install docker-compose-plugin -y
+Last metadata expiration check: 0:18:11 ago on Wed Oct  8 07:04:12 2025.
+No match for argument: docker-compose-plugin
+Error: Unable to find a match: docker-compose-plugin
+[root@ip-172-31-44-195 ~]# sudo dnf install docker -y
+sudo systemctl enable --now docker
+sudo usermod -aG docker $USER
+newgrp docker
+Last metadata expiration check: 0:19:32 ago on Wed Oct  8 07:04:12 2025.
+Package docker-25.0.8-1.amzn2023.0.6.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[root@ip-172-31-44-195 ~]# DOCKER_COMPOSE_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep tag_name | cut -d '"' -f 4)
+
+sudo curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 72.7M  100 72.7M    0     0  67.9M      0  0:00:01  0:00:01 --:--:--  115M
+[root@ip-172-31-44-195 ~]# docker-compose --version
+Docker Compose version v2.40.0
+[root@ip-172-31-44-195 ~]# # start + enable
+sudo systemctl enable --now docker
+# confirm running
+sudo systemctl status docker --no-pager
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; preset: disabled)
+     Active: active (running) since Wed 2025-10-08 07:04:10 UTC; 22min ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 2164 (dockerd)
+      Tasks: 9
+     Memory: 100.8M
+        CPU: 514ms
+     CGroup: /system.slice/docker.service
+             └─2164 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock --default-ulimit nofile=32768:65536
+
+Oct 08 07:04:08 ip-172-31-44-195.ap-south-1.compute.internal systemd[1]: Starting docker.service - Docker Application Containe…ine...
+Oct 08 07:04:09 ip-172-31-44-195.ap-south-1.compute.internal dockerd[2164]: time="2025-10-08T07:04:09.155396995Z" level=info m…ng up"
+Oct 08 07:04:09 ip-172-31-44-195.ap-south-1.compute.internal dockerd[2164]: time="2025-10-08T07:04:09.275069533Z" level=info m…rlay2"
+Oct 08 07:04:09 ip-172-31-44-195.ap-south-1.compute.internal dockerd[2164]: time="2025-10-08T07:04:09.321688747Z" level=info m…tart."
+Oct 08 07:04:10 ip-172-31-44-195.ap-south-1.compute.internal dockerd[2164]: time="2025-10-08T07:04:10.132592611Z" level=info m…dress"
+Oct 08 07:04:10 ip-172-31-44-195.ap-south-1.compute.internal dockerd[2164]: time="2025-10-08T07:04:10.268274328Z" level=info m…done."
+Oct 08 07:04:10 ip-172-31-44-195.ap-south-1.compute.internal dockerd[2164]: time="2025-10-08T07:04:10.313333210Z" level=info m…25.0.8
+Oct 08 07:04:10 ip-172-31-44-195.ap-south-1.compute.internal dockerd[2164]: time="2025-10-08T07:04:10.314579544Z" level=info m…ation"
+Oct 08 07:04:10 ip-172-31-44-195.ap-south-1.compute.internal dockerd[2164]: time="2025-10-08T07:04:10.356917923Z" level=info m….sock"
+Oct 08 07:04:10 ip-172-31-44-195.ap-south-1.compute.internal systemd[1]: Started docker.service - Docker Application Container…ngine.
+Hint: Some lines were ellipsized, use -l to show in full.
+[root@ip-172-31-44-195 ~]# # add the current user to docker group
+sudo usermod -aG docker $(whoami)
+
+# apply group change immediately (or log out & log back in)
+newgrp docker
+[root@ip-172-31-44-195 ~]# docker --version
+docker run --rm hello-world
+Docker version 25.0.8, build 0bab007
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+[root@ip-172-31-44-195 ~]#
+[root@ip-172-31-44-195 ~]# yum install -y docker-compose-plugin
+Last metadata expiration check: 0:23:13 ago on Wed Oct  8 07:04:12 2025.
+No match for argument: docker-compose-plugin
+Error: Unable to find a match: docker-compose-plugin
+[root@ip-172-31-44-195 ~]# sudo yum install -y docker-compose-plugin
+Last metadata expiration check: 0:23:23 ago on Wed Oct  8 07:04:12 2025.
+No match for argument: docker-compose-plugin
+Error: Unable to find a match: docker-compose-plugin
+[root@ip-172-31-44-195 ~]# DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
+mkdir -p $DOCKER_CONFIG/cli-plugins
+curl -SL "https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64" \
+  -o $DOCKER_CONFIG/cli-plugins/docker-compose
+chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
+
+# then confirm
+docker compose version
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 72.7M  100 72.7M    0     0  52.7M      0  0:00:01  0:00:01 --:--:--  169M
+Docker Compose version v2.40.0
+[root@ip-172-31-44-195 ~]# mkdir -p ~/docker-basic-site/html
+cd ~/docker-basic-site
+[root@ip-172-31-44-195 docker-basic-site]# cat > html/index.html <<'HTML'
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>KRISH — Basic Details</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:2rem;background:#f7f9fc;color:#111}
+    .card{max-width:720px;margin:2rem auto;padding:1.6rem;border-radius:12px;background:#fff;box-shadow:0 6px 20px rgba(20,30,50,0.06)}
+    h1{margin:0 0 .5rem}
+    p{margin:.2rem 0}
+    .meta{color:#555;font-size:.95rem}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>KRISH</h1>
+    <p class="meta">Role: System Administrator</p>
+    <p class="meta">Location: Bangalore, India</p>
+    <hr/>
+    <p><strong>About me</strong></p>
+    <p>Hi — I’m KRISH. This small site is served from a Docker container running on Amazon Linux. Edit this file to update the details.</p>
+  </div>
+</body>
+</html>
+HTML
+[root@ip-172-31-44-195 docker-basic-site]# cat > Dockerfile <<'DOCKER'
+FROM nginx:stable-alpine
+RUN rm -rf /usr/share/nginx/html/*
+COPY ./html /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+DOCKER
+[root@ip-172-31-44-195 docker-basic-site]# cat > docker-compose.yml <<'YAML'
+version: "3.8"
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    # For dev, you can swap build with image and enable volume:
+    # volumes:
+    #   - ./html:/usr/share/nginx/html:ro
+YAML
+[root@ip-172-31-44-195 docker-basic-site]# # build + start in background
+docker compose up --build -d
+
+# watch logs (optional)
+docker compose logs -f
+WARN[0000] /root/docker-basic-site/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion
+[+] Building 0.0s (0/0)
+[+] Running 3/3
+ ✔ docker-basic-site-web              Built                                                                                     0.0s
+ ✔ Network docker-basic-site_default  Created                                                                                   0.1s
+ ✔ Container docker-basic-site-web-1  Started                                                                                   0.4s
+WARN[0000] /root/docker-basic-site/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion
+web-1  | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+web-1  | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+web-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+web-1  | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+web-1  | 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+web-1  | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+web-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+web-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+web-1  | /docker-entrypoint.sh: Configuration complete; ready for start up
+web-1  | 2025/10/08 07:29:17 [notice] 1#1: using the "epoll" event method
+web-1  | 2025/10/08 07:29:17 [notice] 1#1: nginx/1.28.0
+web-1  | 2025/10/08 07:29:17 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0)
+web-1  | 2025/10/08 07:29:17 [notice] 1#1: OS: Linux 6.1.150-174.273.amzn2023.x86_64
+web-1  | 2025/10/08 07:29:17 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 32768:65536
+web-1  | 2025/10/08 07:29:17 [notice] 1#1: start worker processes
+web-1  | 2025/10/08 07:29:17 [notice] 1#1: start worker process 30
+
+
+^C
+[root@ip-172-31-44-195 docker-basic-site]#
+curl http://localhost:8080
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>KRISH — Basic Details</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:2rem;background:#f7f9fc;color:#111}
+    .card{max-width:720px;margin:2rem auto;padding:1.6rem;border-radius:12px;background:#fff;box-shadow:0 6px 20px rgba(20,30,50,0.06)}
+    h1{margin:0 0 .5rem}
+    p{margin:.2rem 0}
+    .meta{color:#555;font-size:.95rem}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>KRISH</h1>
+    <p class="meta">Role: System Administrator</p>
+    <p class="meta">Location: Bangalore, India</p>
+    <hr/>
+    <p><strong>About me</strong></p>
+    <p>Hi — I’m KRISH. This small site is served from a Docker container running on Amazon Linux. Edit this file to update the details.</p>
+  </div>
+</body>
+</html>
+[root@ip-172-31-44-195 docker-basic-site]# # Enable Docker to start automatically on boot
+sudo systemctl enable docker
+
+# Edit your docker-compose.yml if not already having restart policy
+# (you already added restart: unless-stopped, so you’re good)
+^C
+[root@ip-172-31-44-195 docker-basic-site]# sudo systemctl enable docker
+[root@ip-172-31-44-195 docker-basic-site]# reboot
+
+Broadcast message from root@ip-172-31-44-195.ap-south-1.compute.internal on pts/1 (Wed 2025-10-08 07:42:54 UTC):
+
+The system will reboot now!
+
+[root@ip-172-31-44-195 docker-basic-site]# Connection to 52.66.30.190 closed by remote host.
+Connection to 52.66.30.190 closed.
+root@IN-GTC-3414:/mnt/c/linux# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@IN-GTC-3414:/mnt/c/linux#
