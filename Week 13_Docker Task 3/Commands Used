@@ -1,0 +1,154 @@
+root@IN-GTC-3414:/mnt/c/linux# ssh -i mylinux.pem ec2-user@43.205.103.253
+The authenticity of host '43.205.103.253 (43.205.103.253)' can't be established.
+ED25519 key fingerprint is SHA256:cg4d9UwFWVyVsqhAvCRaQ9PRika+3u7arkr9DSxaV7Y.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:7: [hashed name]
+    ~/.ssh/known_hosts:9: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '43.205.103.253' (ED25519) to the list of known hosts.
+
+A newer release of "Amazon Linux" is available.
+  Version 2023.9.20250929:
+  Version 2023.9.20251014:
+Run "/usr/bin/dnf check-release-update" for full release and version update info
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Wed Oct  8 07:15:24 2025 from 182.75.46.146
+[ec2-user@ip-172-31-44-195 ~]$
+[ec2-user@ip-172-31-44-195 ~]$ docker --version
+Docker version 25.0.8, build 0bab007
+[ec2-user@ip-172-31-44-195 ~]$ sudo docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+[ec2-user@ip-172-31-44-195 ~]$
+[ec2-user@ip-172-31-44-195 ~]$ ls
+[ec2-user@ip-172-31-44-195 ~]$ ls
+[ec2-user@ip-172-31-44-195 ~]$ ls -a
+.  ..  .bash_history  .bash_logout  .bash_profile  .bashrc  .ssh
+[ec2-user@ip-172-31-44-195 ~]$ ls lr
+ls: cannot access 'lr': No such file or directory
+[ec2-user@ip-172-31-44-195 ~]$ mkdir nginx-custom
+[ec2-user@ip-172-31-44-195 ~]$ ls
+nginx-custom
+[ec2-user@ip-172-31-44-195 ~]$ cd nginx-custom
+[ec2-user@ip-172-31-44-195 nginx-custom]$ mkdir site conf
+[ec2-user@ip-172-31-44-195 nginx-custom]$ nano site/index.html
+[ec2-user@ip-172-31-44-195 nginx-custom]$ nano conf/nginx.conf
+[ec2-user@ip-172-31-44-195 nginx-custom]$ nano Dockerfile
+[ec2-user@ip-172-31-44-195 nginx-custom]$ nano docker-compose.yml
+[ec2-user@ip-172-31-44-195 nginx-custom]$ sudo docker-compose up --build -d
+WARN[0000] /home/ec2-user/nginx-custom/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion
+[+] Building 0.0s (0/0)
+[+] Running 2/3
+ ✔ nginx-custom-web              Built                                                                                          0.0s
+ ✔ Network nginx-custom_default  Created                                                                                        0.1s
+ ⠹ Container nginx-custom-web-1  Starting                                                                                       0.2s
+Error response from daemon: driver failed programming external connectivity on endpoint nginx-custom-web-1 (2c1dfd130f24a0e6e86300b00b78f4a418933e28972afd8c27807915b08ca118): Bind for 0.0.0.0:8080 failed: port is already allocated
+[ec2-user@ip-172-31-44-195 nginx-custom]$ sudo docker ps
+CONTAINER ID   IMAGE                   COMMAND                  CREATED      STATUS          PORTS                                   NAMES
+e8a7f2bf13a1   docker-basic-site-web   "/docker-entrypoint.…"   6 days ago   Up 10 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   docker-basic-site-web-1
+[ec2-user@ip-172-31-44-195 nginx-custom]$ sudo docker stop <e8a7f2bf13a1>
+-bash: syntax error near unexpected token `newline'
+[ec2-user@ip-172-31-44-195 nginx-custom]$ sudo docker stop e8a7f2bf13a1
+e8a7f2bf13a1
+[ec2-user@ip-172-31-44-195 nginx-custom]$ sudo docker rm e8a7f2bf13a1
+e8a7f2bf13a1
+[ec2-user@ip-172-31-44-195 nginx-custom]$ sudo docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[ec2-user@ip-172-31-44-195 nginx-custom]$ sudo docker-compose up --build -d
+WARN[0000] /home/ec2-user/nginx-custom/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion
+[+] Building 0.0s (0/0)
+[+] Running 2/2
+ ✔ nginx-custom-web              Built                                                                                          0.0s
+ ✔ Container nginx-custom-web-1  Started                                                                                        0.4s
+[ec2-user@ip-172-31-44-195 nginx-custom]$ sudo docker ps
+CONTAINER ID   IMAGE              COMMAND                  CREATED         STATUS         PORTS                                   NAMES
+1e9174ee1781   nginx-custom-web   "/docker-entrypoint.…"   3 minutes ago   Up 5 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   nginx-custom-web-1
+[ec2-user@ip-172-31-44-195 nginx-custom]$
+[ec2-user@ip-172-31-44-195 nginx-custom]$ sudo docker ps
+CONTAINER ID   IMAGE              COMMAND                  CREATED         STATUS         PORTS                                   NAMES
+1e9174ee1781   nginx-custom-web   "/docker-entrypoint.…"   9 minutes ago   Up 6 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   nginx-custom-web-1
+[ec2-user@ip-172-31-44-195 nginx-custom]$ ls
+Dockerfile  conf  docker-compose.yml  site
+[ec2-user@ip-172-31-44-195 nginx-custom]$ cd site
+[ec2-user@ip-172-31-44-195 site]$ cat index.html
+<h1>Hello Krish! 🚀</h1>
+<p>This is served from /var/opt/nginx</p>
+[ec2-user@ip-172-31-44-195 site]$ nano index.html
+[ec2-user@ip-172-31-44-195 site]$ cd ..
+[ec2-user@ip-172-31-44-195 nginx-custom]$ docker login
+Log in with your Docker ID or email address to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com/ to create one.
+You can log in with your password or a Personal Access Token (PAT). Using a limited-scope PAT grants better security and is required for organizations using SSO. Learn more at https://docs.docker.com/go/access-tokens/
+
+Username: yokeshkrish38@gmail.com
+Password:
+WARNING! Your password will be stored unencrypted in /home/ec2-user/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+[ec2-user@ip-172-31-44-195 nginx-custom]$ docker images
+REPOSITORY              TAG       IMAGE ID       CREATED          SIZE
+nginx-custom-web        latest    fc24308d28e3   22 minutes ago   192MB
+docker-basic-site-web   latest    dc8ca948c1dc   6 days ago       48.2MB
+nginx                   latest    203ad09fc156   2 months ago     192MB
+hello-world             latest    1b44b5a3e06a   2 months ago     10.1kB
+alpine                  latest    9234e8fb04c4   3 months ago     8.31MB
+[ec2-user@ip-172-31-44-195 nginx-custom]$ docker tag nginx-custom:latest krish96/nginx-custom:latest
+Error response from daemon: No such image: nginx-custom:latest
+[ec2-user@ip-172-31-44-195 nginx-custom]$ docker tag nginx-custom-web:latest krish96/nginx-custom:latest
+[ec2-user@ip-172-31-44-195 nginx-custom]$ docker push krish96/nginx-custom:latest
+The push refers to repository [docker.io/krish96/nginx-custom]
+5f70bf18a086: Preparing
+b5e6d0888e95: Preparing
+746ad49ab592: Preparing
+131c1c486b17: Preparing
+4e8d3453aa66: Preparing
+cd35d865f504: Waiting
+fe540ea49339: Waiting
+1acc971d8a3d: Waiting
+c9314274c8ae: Waiting
+aca836066730: Waiting
+denied: requested access to the resource is denied
+[ec2-user@ip-172-31-44-195 nginx-custom]$ docker push krish96/nginx-custom:latest
+The push refers to repository [docker.io/krish96/nginx-custom]
+5f70bf18a086: Pushed
+b5e6d0888e95: Pushed
+746ad49ab592: Pushed
+131c1c486b17: Pushed
+4e8d3453aa66: Pushed
+cd35d865f504: Pushed
+fe540ea49339: Pushed
+1acc971d8a3d: Pushed
+c9314274c8ae: Pushed
+aca836066730: Pushed
+latest: digest: sha256:04b6881a39091190c9ecb75d4df84f00ac5c928939e75cf9bc9c53e140e91b20 size: 2398
+[ec2-user@ip-172-31-44-195 nginx-custom]$
